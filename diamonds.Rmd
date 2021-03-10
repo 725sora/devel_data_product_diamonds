@@ -1,0 +1,43 @@
+---
+title: "Analysis of the diamond prices"
+date: "2021-03-10"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r, message=FALSE}
+library(ggplot2)
+library(plotly)
+data("diamonds")
+```
+
+## Introduction to the data set diamonds
+
+- The data set "diamonds" is part of the ggplot2 library
+- The data frame size: 10 variables and 53940 observables 
+- An analysis between the variabes price, carat, cut, clarity might be interesting
+
+## Summary of the data set
+
+```{r, echo=TRUE}
+str(diamonds)
+```
+
+## 3D scatter plot
+
+```{r, echo=FALSE, message=FALSE}
+plot_ly(diamonds, x=~carat, y=~cut, z=~price, color = ~color)
+```
+
+## Next Steps
+
+From the 3D scatter plot we can see following phenomena, which requires a deeper analysis:
+
+- The diamond size (carat) has a large impact on the price 
+- The color seems to have also a large impact on the price
+
+
